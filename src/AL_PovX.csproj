@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>AL_PovX</AssemblyName>
+    <RootNamespace>AL_PovX</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Version>0.2.2</Version>
+    <Product>AL_PovX</Product>
+    <Description>First-person view during H scenes for AmanatsuLocation</Description>
+    <Copyright>MIT License. Based on AC_PovX by y0soro and SVS_PovX by its original author(s).</Copyright>
+    <Company>AL_PovX contributors</Company>
+    <DebugType>none</DebugType>
+    <GenerateDependencyFile>false</GenerateDependencyFile>
+    <Deterministic>true</Deterministic>
+    <PathMap>$(MSBuildProjectDirectory)=.</PathMap>
+  </PropertyGroup>
+
+  <!-- Point this at your game's BepInEx folder, e.g. dotnet build -c Release -p:GameDir="C:\Games\AmanatsuLocation\BepInEx".
+       BepInEx must have been run once so the interop folder exists. -->
+  <PropertyGroup>
+    <GameDir Condition="'$(GameDir)' == ''">C:\Games\AmanatsuLocation\BepInEx</GameDir>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="$(GameDir)/core/0Harmony.dll" Private="false" />
+    <Reference Include="$(GameDir)/core/BepInEx.Core.dll" Private="false" />
+    <Reference Include="$(GameDir)/core/BepInEx.Unity.IL2CPP.dll" Private="false" />
+    <Reference Include="$(GameDir)/core/BepInEx.Unity.Common.dll" Private="false" />
+    <Reference Include="$(GameDir)/core/Il2CppInterop.Runtime.dll" Private="false" />
+    <Reference Include="$(GameDir)/core/Il2CppInterop.Common.dll" Private="false" />
+    <Reference Include="$(GameDir)/interop/*.dll" Private="false" />
+  </ItemGroup>
+</Project>
