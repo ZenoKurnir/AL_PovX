@@ -92,13 +92,8 @@ internal static class Hooks
         Controller.hScene = __instance;
     }
 
-    [HarmonyPrefix]
-    [HarmonyPatch(typeof(HScene), nameof(HScene.OnEnd))]
-    public static void HScene_Pre_OnEnd()
-    {
-        Plugin.Log.LogDebug("HScene end: toggle off PoV and restore actors");
-        Controller.RestoreCharacters();
-    }
+    // No patch on HScene.OnEnd: it returns UniTask (a struct), and patching it is the likely cause of the game
+    // closing to desktop when H ends. Dispose below restores the characters instead.
 
     [HarmonyPrefix]
     [HarmonyPatch(typeof(HScene), nameof(HScene.Dispose))]

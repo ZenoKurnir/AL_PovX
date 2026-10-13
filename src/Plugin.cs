@@ -14,7 +14,7 @@ namespace AL_PovX;
 public class Plugin : BasePlugin
 {
     public const string GUID = "AL_PovX";
-    public const string Version = "0.2.2";
+    public const string Version = "0.2.3";
 
     private const string SECTION_GENERAL = "General";
     private const string SECTION_SCENE_POV = "Scene PoV";

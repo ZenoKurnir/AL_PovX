@@ -6,7 +6,7 @@
     <LangVersion>latest</LangVersion>
     <Nullable>disable</Nullable>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-    <Version>0.2.2</Version>
+    <Version>0.2.3</Version>
     <Product>AL_PovX</Product>
     <Description>First-person view during H scenes for AmanatsuLocation</Description>
     <Copyright>MIT License. Based on AC_PovX by y0soro and SVS_PovX by its original author(s).</Copyright>
